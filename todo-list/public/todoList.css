@@ -1,0 +1,120 @@
+
+
+
+/** {*/
+    /*outline: 1px solid red;*/
+/*}*/
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #000 url(images/bg.jpg) repeat;
+    opacity: 1;
+}
+
+.todo-header {
+    height: 100px;
+}
+
+.todo-user {
+    float: right;
+    width: 40px;
+    height: 40px;
+    margin-top: 3px;
+    background-color: rgba(255,255, 255, 0.6);
+    border-radius:50%;
+}
+.todo-user::after {
+    content: "login";
+    position: relative;
+    top: 40px;
+    left: 10px;
+    color: #fff;
+    font: 300 0.5em/1.5 sans-serif;
+}
+
+.todo-function {
+    color: rgba(255, 255, 255, 0.5);
+    font: 100 2em sans-serif;
+}
+.todo-container {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.todo-control {
+    border-bottom: 2px solid rgba(255, 255, 255, 0.8);
+}
+.todo-input {
+    /*visibility: hidden;*/
+    width: 70%;
+    padding: 5px;
+    border: none;
+    background-color: transparent;
+    color: #fff;
+    font: 300 1em sans-serif;
+}
+::-webkit-input-placeholder {
+    color: #eee;
+    opacity: 0.7;
+    font: 100 1em sans-serif;
+}
+.todo-add {
+    width: 25%;
+    border: none;
+    border-radius: 1px;
+    color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(0, 0, 0, 0.2);
+    text-transfoem: uppercase;
+    vertical-align: middle;
+    font: 300 0.5em/1.5 sans-serif;
+}
+
+.todo-itemGroup {
+    margin-top: 50px;
+}
+
+
+.todo-item {
+    height: 30px;
+    margin-bottom: 10px;
+    padding: 0 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+
+.todo-task {
+    display: inline-block;
+    width: 70%;
+    color: #fff;
+    font: 400 0.8em/30px  sans-serif;
+    word-break: keep-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.todo-done, .todo-delete {
+    /*display: none;*/
+    float: right;
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    padding: 0;
+    border: none;
+    border-radius: 1px;
+    background-color: rgba(0 , 0, 0, 0.1);
+    color: #eee;
+    vertical-align: middle;
+    font: 100 0.7em/20px sans-serif;
+}
+
+.todo-finished {
+    text-decoration: line-through;
+}
+
+.show {
+    display: block;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>HTML5 怀旧音乐播放器</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="cassette.css">
+</head>
+<body>
+    <div class="container">
+
+        <audio src= "" id="audio-player" loop></audio>
+
+        <div class="vc-container" id="vc-container">
+            <div class="vc-tape-wrapper">
+                <div class="vc-tape">
+                    <div class="vc-tape-back">
+                        <div class="vc-tape-wheel vc-tape-wheel-left">
+                            <div></div>
+                        </div>
+                        <div class="vc-tape-wheel vc-tape-wheel-right">
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="vc-tape-front vc-tape-side-a">
+                        <span>A</span>
+                    </div>
+<!--                    <div class="vc-tape-front vc-tape-side-b hide">
+                        <span>B</span>
+                    </div>-->
+                </div>
+            </div>
+            <div class="vc-lyric">
+                <p>作曲 : Sam Cooke</p>
+                <p>作词 : Sam Cooke</p>
+                <p>I was born by the river</p>
+                <p>In a little tent</p>
+                <p>Oh and just like the river I've been running ever since</p>
+                <p>It's been a long, a long time coming</p>
+                <p>But I know a change gonna come</p>
+                <p>Oh yes it will</p>
+                <p>I go to the movie</p>
+                <p>And I go downtown</p>
+                <!--<p>Somebody keep telling me don't hang around</p>-->
+                <!--<p>It's been a long, a long time coming</p>-->
+                <!--<p>But I know a change gonna come</p>-->
+                <!--<p>Oh yes it will</p>-->
+                <!--<p>Then I go to my brother</p>-->
+            </div>
+            <!--controls-->
+            <div class="vc-controlSet">
+                <ul class="vc-controls">
+                    <li class="vc-control-play">
+                        Play
+                        <span></span>
+                    </li>
+                    <li class="vc-control-prev">
+                        prev
+                        <span></span>
+                    </li>
+                    <li class="vc-control-next">
+                        next
+                        <span></span>
+                    </li>
+                    <li class="vc-control-pause">
+                        pause
+                        <span></span>
+                    </li>
+                    <li class="vc-control-mode repeatPlay">
+                        mode
+                        <span></span>
+                    </li>
+                </ul>
+                <!--volume-->
+                <div class="vc-volume-wrap">
+                    <div class="vc-volume-control">
+                        <div class="vc-volume-knob">
+                            <div class="knob">
+                                <div class="top"></div>
+                                <div class="base"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+<script src="http://cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="knobKnob.jquery.js"></script>
+<script src="cassette.js"></script>
+</body>
+</html>

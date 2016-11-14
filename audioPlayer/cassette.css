@@ -1,0 +1,371 @@
+
+@import url("normalize.css");
+
+@font-face {
+    font-family: "playericons";
+    src:
+        url("fonts/playericons.eot#iefix") format("embedded-opentype"),
+        url("fonts/playericons.woff") format("woff"),
+        url("fonts/playericons.ttf") format("truetype"),
+        url("fonts/playericons.svg#playericons") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-famliy: Cambria, Georgia, serif;
+    background: #b6b6b6 url(images/bg.jpg) fixed no-repeat top center;
+    font-weight: 400;
+    font-size: 15px;
+    color: #333;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+/*container*/
+    .container {
+        width: 100%;
+        position: relative;
+    }
+
+    .vc-container {
+        position: relative;
+        margin-bottom: 50px;
+        height: 500px;
+        text-align: center;
+    }
+
+    .vc-tape-wrapper {
+        perspective: 800px;
+        filter: blur(2px) brightness(125%);
+    }
+
+/*tape*/
+    .vc-tape {
+        position: relative;
+        width: 586px;
+        height: 379px;
+        margin: 30px auto 0;
+        transition: all 0.4s ease-in-out;
+        /*transform: rotate3d(0, 1, 0, 180deg);*/
+    }
+
+    .vc-tape-back {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background: transparent url(images/cs_back.png) no-repeat center center;
+    }
+    .vc-tape-wheel {
+        position: absolute;
+        top: 110px;
+        width: 125px;
+        height: 125px;
+        border-radius: 50%;
+        background: transparent;
+    }
+    .vc-tape-wheel-left {
+        left: 109px;
+        box-shadow: 0 0 0 70px #000;
+    }
+    .vc-tape-wheel-right {
+        right: 113px;
+    }
+    .vc-tape-wheel div {
+        width: 100%;
+        height: 100%;
+        background: transparent url(images/cs_wheel.png) no-repeat center center;
+    }
+
+    .vc-tape-front {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent url(images/cs_front.png) no-repeat center center;
+        opacity: 0.90;
+    }
+/*    .vc-tape-side-b {
+        transform: rotate3d(0, 1, 0, 180deg);
+    }*/
+    .vc-tape-front span {
+        position: absolute;
+        top: 83px;
+        left: 67px;
+        color:  rgba(0, 0, 0, 0.6);
+        font-family: Arial;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .vc-lyric {
+        font: 300 12px "Aldrich";
+        letter-spacing: 1px;
+        color: #555;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+    }
+    .vc-lyric p{
+        margin-bottom: 10px;
+        margin-top: 0;
+    }
+/*controls*/
+    .vc-controlSet{
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+    }
+    ul.vc-controls {
+        list-style: none;
+        position: absolute;
+        bottom: 18px;
+        left: 50%;
+        width: 440px;
+        height: 54px;
+        margin: 0 0 0 -170px;
+        padding: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        border-bottom-color: rgba(255, 255, 255, 0.6);
+        box-shadow:
+            inset 0 1px 0px rgba(0, 0, 0, 0.05),
+            0 1px 0 rgba(255, 255, 255, 0.8),
+            0 -1px 0 rgba(255, 255, 255, 0.4),
+            inset 0 2px 19px rgba(0, 0, 0, 0.05),
+            0 2px 1px rgba(0, 0, 0, 0.06);
+        box-sizing: content-box;
+        background: linear-gradient(to bottom,
+                rgba(170, 170, 170, 0.35) 0%,
+                rgba(255, 255, 255, 0.44) 50%,
+                rgba(255,255, 255, 0.53) 100%
+        );
+    }
+    ul.vc-controls li {
+        display: block;
+        float: left;
+        width: 80px;
+        height: 50px;
+        padding: 10px;
+        margin: 0;
+        line-height: 55px;
+        text-align: left;
+        cursor: pointer;
+        background: #ddd url(images/metal.jpg) no-repeat center top;
+        box-shadow:
+            inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+            inset 0 0 1px 2px rgba(255, 255, 255, 0.9),
+            inset 0 -6px 5px rgba(0, 0, 0, 0.1),
+            0 6px 7px rgba(0, 0, 0, 0.3),
+            0 4px 1px rgba(0, 0, 0, 0.5);
+        user-select: none;
+    }
+
+    .vc-controls li {
+        font: 300 10px "Aldrich";
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #666;
+        text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+    }
+    ul.vc-controls li:first-child {
+        border-radius: 8px 0px 0px 8px;
+    }
+    ul.vc-controls li:last-child {
+        border-radius: 0px 8px 8px 0px;
+    }
+    ul.vc-controls li.vc-control-play {
+        width: 120px;
+    }
+
+    ul.vc-controls li span:before {
+        float: left;
+        display: inline-block;
+        width: 1em;
+        margin-right: 0.2em;
+        color: #444;
+        font: normal normal 16px/50px "playericons";
+        text-align: center;
+        text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.9);
+        text-transform: none;
+        text-decoration: inherit;
+        speak:none;
+    }
+    .vc-control-play span:before{
+        content: "\70";
+    }
+    .vc-control-pause span:before {
+        content: "\50";
+    }
+    .vc-control-prev span:before {
+        content: "\23ea";
+    }
+    .vc-control-next span:before {
+        content: "\23e9";
+    }
+    .vc-control-mode.repeatPlay span:before {
+        font-weight: 900;
+        font-size: 1.5em;
+        content: "⟳";
+    }
+    .vc-control-mode.listPlay span:before {
+        font-weight: 900;
+        font-size: 1.5em;
+        content: "⇛";
+    }
+
+    .vc-controls li:hover {
+        box-shadow:
+            inset 0 0 0 1px rgba(0, 0, 0, 0.2),
+            inset 0 0 1px 2px rgba(255, 255, 255, 0.9),
+            inset 0 -10px 15px rgba(0, 0, 0, 0.1),
+            0 6px 7px  rgba(0, 0, 0, 0.3),
+            0 4px 1px rgba(0, 0, 0, 0.5);
+    }
+    .vc-controls li.vc-control-active {
+        height: 50px;
+        margin-top: 2px;
+        background-image: url(images/metal_dark.jpg);
+        box-shadow:
+                inset 0 0 0 1px rgba(0, 0 , 0, 0.18),
+                inset 0 0 1px 2px rgba(255, 255, 255, 0.5),
+                inset 0 -6px 5px rgba(0, 0, 0, 0.1),
+                0 6px 7px rgba(0, 0, 0, 0.3),
+                0 2px 1px rgba(0, 0, 0, 0.5);
+    }
+
+    .vc-controls li.vc-control-next:focus,
+    .vc-controls li.vc-control-prev:focus,
+    .vc-controls li.vc-control-next:active,
+    .vc-controls li.vc-control-prev:active {
+        height: 50px;
+        margin-top: 2px;
+        background-image: url(images/metal_dark.jpg);
+        box-shadow:
+                inset 0 0 0 1px rgba(0, 0 , 0, 0.18),
+                inset 0 0 1px 2px rgba(255, 255, 255, 0.5),
+                inset 0 -6px 5px rgba(0, 0, 0, 0.1),
+                0 6px 7px rgba(0, 0, 0, 0.3),
+                0 2px 1px rgba(0, 0, 0, 0.5);
+    }
+
+/*volume*/
+    .vc-volume-wrap {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 100px;
+        height: 100px;
+        padding: 8px;
+        margin-left: -318px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        box-shadow:
+            inset 0 1px 0px rgba(0, 0, 0, 0.05),
+            0 1px 0 rgb(255, 255, 255, 0.6),
+            0 -1px 0 rgba(255, 255, 255, 0.4),
+            inset 0 2px 19px rgba(0, 0, 0, 0.05),
+            0 2px 1px rgba(0, 0, 0, 0.06);
+        box-sizing: content-box;
+        background: linear-gradient(to bottom,
+                    rgba(170, 170, 170, 0.35) 0%,
+                    rgba(255, 255, 255, 0.44) 50%,
+                    rgba(255, 255, 255, 0.53) 100%
+        );
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59aaaaaa', endColorstr='#87ffffff',GradientType=0 );
+
+    }
+    .vc-volume-wrap:after {
+        content: "Volume";
+        margin-top: 15px;
+        display: block;
+        font-family: 'Aldrich';
+        font-size: 10px;
+        font-weight: 300;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #666;
+        text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+    }
+
+    .vc-volume-wrap:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: -8px;
+        transform: translateY(50%);
+        width: 4px;
+        height: 4px;
+        margin-top: -2px;
+        border-radius: 50%;
+        box-shadow:
+                0 0 1px #5a5a5a inset,
+                1px -1px 1px rgba(255,255,255, 0.5);
+        background-color: darkred;
+        cursor: default !important;
+    }
+
+    .knob {
+        width: 100px;
+        height: 100px;
+        position: relative;
+    }
+    .knob .top {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        box-shadow: inset 0 0 3px 2px rgba(255, 255, 255, 0.6);
+        background: url(images/knob.jpg) no-repeat center center;
+        z-index: 10;
+        cursor: default !important;
+    }
+    .knob .top:after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 4px;
+        transform: translateY(-50%);
+        width: 4px;
+        height: 4px;
+        margin-top: -2px;
+        border-radius: 50%;
+        box-shadow:
+            0 0 1px #5a5a5a inset,
+            1px -1px 1px rgba(255,255,255, 0.5);
+        background-color: #666;
+        cursor: default !important;
+    }
+    .knob .base {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        box-shadow: 0 5px 0 #555,
+                    0px 5px 5px black;
+        z-index: 1;
+    }
+    .knob [draggable] {
+        user-select: none;
+    }
+
+    .hide {
+        display: none;
+    }
+    .show {
+        display: block;
+    }
+
+ /*wheel*/
+    @keyframes rotateRight {
+        0% {
+            transform: rotate(0deg) translateZ(-1px);
+        }
+        100% {
+            transform: rotate(360deg) translateZ(-1px);
+        }
+    }
+
+    .rotate {
+        animation: rotateRight 2s linear infinite forwards;
+    }
+
